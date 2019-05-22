@@ -15,6 +15,20 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func didEndOnExit(_ sender: UITextField) {
+        open(urlString: sender.text)
+    }
+    
+    internal func open(urlString: String?, application: UIApplicationProtocol = UIApplication.shared) {
+        guard let urlString = urlString, let url = URL(string: urlString) else {
+            return
+        }
+        
+        if application.canOpenURL(url) {
+            // 引数のURLを開ける場合に開く
+            application.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
 }
 

@@ -13,6 +13,7 @@
 		9E6D9B572294F08C00738EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E6D9B562294F08C00738EE1 /* Assets.xcassets */; };
 		9E6D9B5A2294F08C00738EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6D9B582294F08C00738EE1 /* LaunchScreen.storyboard */; };
 		9E6D9B652294F08C00738EE1 /* CuckooTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9B642294F08C00738EE1 /* CuckooTestTests.swift */; };
+		9E6D9B7B2294F7DF00738EE1 /* UIApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9B7A2294F7DF00738EE1 /* UIApplicationProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		9E6D9B602294F08C00738EE1 /* CuckooTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuckooTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6D9B642294F08C00738EE1 /* CuckooTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuckooTestTests.swift; sourceTree = "<group>"; };
 		9E6D9B662294F08C00738EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E6D9B7A2294F7DF00738EE1 /* UIApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				9E6D9B562294F08C00738EE1 /* Assets.xcassets */,
 				9E6D9B582294F08C00738EE1 /* LaunchScreen.storyboard */,
 				9E6D9B5B2294F08C00738EE1 /* Info.plist */,
+				9E6D9B7A2294F7DF00738EE1 /* UIApplicationProtocol.swift */,
 			);
 			path = CuckooTest;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6D9B7B2294F7DF00738EE1 /* UIApplicationProtocol.swift in Sources */,
 				9E6D9B522294F08B00738EE1 /* ViewController.swift in Sources */,
 				9E6D9B502294F08B00738EE1 /* AppDelegate.swift in Sources */,
 			);
