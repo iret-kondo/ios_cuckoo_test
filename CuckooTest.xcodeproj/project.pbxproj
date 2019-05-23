@@ -14,6 +14,8 @@
 		9E6D9B5A2294F08C00738EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6D9B582294F08C00738EE1 /* LaunchScreen.storyboard */; };
 		9E6D9B652294F08C00738EE1 /* CuckooTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9B642294F08C00738EE1 /* CuckooTestTests.swift */; };
 		9E6D9B7B2294F7DF00738EE1 /* UIApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9B7A2294F7DF00738EE1 /* UIApplicationProtocol.swift */; };
+		9E6D9B7F2294FA2200738EE1 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9B7E2294FA2200738EE1 /* GeneratedMocks.swift */; };
+		9E6D9B822294FA5600738EE1 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6D9B812294FA5600738EE1 /* Cuckoo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		9E6D9B642294F08C00738EE1 /* CuckooTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuckooTestTests.swift; sourceTree = "<group>"; };
 		9E6D9B662294F08C00738EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E6D9B7A2294F7DF00738EE1 /* UIApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationProtocol.swift; sourceTree = "<group>"; };
+		9E6D9B7E2294FA2200738EE1 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		9E6D9B812294FA5600738EE1 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6D9B822294FA5600738EE1 /* Cuckoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,7 @@
 				9E6D9B4E2294F08B00738EE1 /* CuckooTest */,
 				9E6D9B632294F08C00738EE1 /* CuckooTestTests */,
 				9E6D9B4D2294F08B00738EE1 /* Products */,
+				9E6D9B802294FA5500738EE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,10 +99,19 @@
 		9E6D9B632294F08C00738EE1 /* CuckooTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				9E6D9B7E2294FA2200738EE1 /* GeneratedMocks.swift */,
 				9E6D9B642294F08C00738EE1 /* CuckooTestTests.swift */,
 				9E6D9B662294F08C00738EE1 /* Info.plist */,
 			);
 			path = CuckooTestTests;
+			sourceTree = "<group>";
+		};
+		9E6D9B802294FA5500738EE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E6D9B812294FA5600738EE1 /* Cuckoo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +124,8 @@
 				9E6D9B482294F08B00738EE1 /* Sources */,
 				9E6D9B492294F08B00738EE1 /* Frameworks */,
 				9E6D9B4A2294F08B00738EE1 /* Resources */,
+				9E6D9B7C2294F89300738EE1 /* Carthage */,
+				9E6D9B7D2294F8D500738EE1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -195,6 +212,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9E6D9B7C2294F89300738EE1 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Cuckoo.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cuckoo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		9E6D9B7D2294F8D500738EE1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "OUTPUT_FILE=\"$PROJECT_DIR/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\n\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\n\n\"Carthage/Checkouts/Cuckoo/run\" generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/UIApplicationProtocol.swift\"\n\necho \"$SRCROOT\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9E6D9B482294F08B00738EE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -211,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E6D9B652294F08C00738EE1 /* CuckooTestTests.swift in Sources */,
+				9E6D9B7F2294FA2200738EE1 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +461,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 947E45MWM6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CuckooTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -424,6 +486,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 947E45MWM6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CuckooTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
