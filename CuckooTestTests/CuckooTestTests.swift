@@ -8,27 +8,38 @@
 
 import XCTest
 @testable import CuckooTest
+import Cuckoo
 
 class CuckooTestTests: XCTestCase {
+    private let mock = MockUIApplicationProtocol()
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let url = URL(string: "hoge")
+        stub(mock) { mock in
+            when(mock.canOpenURL(any())).thenReturn(false)
+            when(mock.canOpenURL(url!)).thenReturn(true)
+            when(mock.open(any(), options: any(), completionHandler: any())).thenDoNothing()
+        }
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testOpenUrl() {
+        let viewController = ViewController()
+        
+        viewController.open(urlString: "hoge", application: mock)
+        verify(mock, times(1)).canOpenURL(any())
+        verify(mock, times(1)).open(any(), options: any(), completionHandler: any())
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+        viewController.open(urlString: "hogehoge", application: mock)
+        verify(mock, times(2)).canOpenURL(any())
+        verify(mock, times(1)).open(any(), options: any(), completionHandler: any())
 
+        viewController.open(urlString: "", application: mock)
+        verify(mock, times(2)).canOpenURL(any())
+        verify(mock, times(1)).open(any(), options: any(), completionHandler: any())
+    }
+    
 }

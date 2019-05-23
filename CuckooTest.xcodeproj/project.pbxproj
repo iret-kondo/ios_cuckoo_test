@@ -16,6 +16,7 @@
 		9E6D9B7B2294F7DF00738EE1 /* UIApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9B7A2294F7DF00738EE1 /* UIApplicationProtocol.swift */; };
 		9E6D9B7F2294FA2200738EE1 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9B7E2294FA2200738EE1 /* GeneratedMocks.swift */; };
 		9E6D9B822294FA5600738EE1 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6D9B812294FA5600738EE1 /* Cuckoo.framework */; };
+		9E6D9B872295342F00738EE1 /* URL+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6D9B862295342F00738EE1 /* URL+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		9E6D9B7A2294F7DF00738EE1 /* UIApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationProtocol.swift; sourceTree = "<group>"; };
 		9E6D9B7E2294FA2200738EE1 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		9E6D9B812294FA5600738EE1 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
+		9E6D9B862295342F00738EE1 /* URL+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				9E6D9B7E2294FA2200738EE1 /* GeneratedMocks.swift */,
 				9E6D9B642294F08C00738EE1 /* CuckooTestTests.swift */,
 				9E6D9B662294F08C00738EE1 /* Info.plist */,
+				9E6D9B862295342F00738EE1 /* URL+extension.swift */,
 			);
 			path = CuckooTestTests;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6D9B872295342F00738EE1 /* URL+extension.swift in Sources */,
 				9E6D9B652294F08C00738EE1 /* CuckooTestTests.swift in Sources */,
 				9E6D9B7F2294FA2200738EE1 /* GeneratedMocks.swift in Sources */,
 			);
