@@ -4,7 +4,7 @@
 UIApplicationのmockを[Cuckoo](https://github.com/Brightify/Cuckoo)を使用して作成したサンプルです。
 
 ## 動作環境
-Xcode 10.2.1
+Xcode 10.2.1  
 Swift 5.0
 
 ## 参考
